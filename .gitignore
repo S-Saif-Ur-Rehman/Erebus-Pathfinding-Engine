@@ -1,0 +1,8 @@
+knowledge.txt
+build/
+.vscode/
+*.exe
+*.o
+*.obj
+main.exe
+
