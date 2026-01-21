@@ -319,13 +319,13 @@ float heuristic(Node* a, Node* b, Algorithm algo) {
     if (algo == DIJKSTRA || algo == BFS || algo == DFS) h = 0;
     else if (algo == SWARM) h = (float)(abs(a->row - b->row) + abs(a->col - b->col)) * 4.0f; // High weight
     else if (algo == CONVERGENT_SWARM) h = (float)(abs(a->row - b->row) + abs(a->col - b->col)) * 100.0f; // Very high weight
-    else if (algo == ASTAR || algo == GREEDY) h = (float)std::abs(a->row - b->row) + std::abs(a->col - b->col);
-    // else h = std::sqrt(std::pow(a->row - b->row, 2) + std::pow(a->col - b->col, 2)); // Euclidean for other A* variants if needed
+    else if (algo == ASTAR || algo == GREEDY) h = (float)abs(a->row - b->row) + abs(a->col - b->col);
+    // else h = sqrt(pow(a->row - b->row, 2) + pow(a->col - b->col, 2)); // Euclidean for other A* variants if needed
 
     // Knowledge Bonus: Favor paths we've taken before
     if (knowledgeBase.count({a->row, a->col})) {
         float bonus = knowledgeBase[{a->row, a->col}] * 0.2f; 
-        h -= std::min(h * 0.5f, bonus); // Don't let bonus invert the distance
+        h -= min(h * 0.5f, bonus); // Don't let bonus invert the distance
     }
     return h;
 }
@@ -481,7 +481,7 @@ void pruneBranch(Node* root) {
 
     // 3. Remove from visitedOrder for visuals
     visitedOrder.erase(
-        std::remove_if(visitedOrder.begin(), visitedOrder.end(), 
+        remove_if(visitedOrder.begin(), visitedOrder.end(), 
             [&](Node* n){ return toReset.count(n); }),
         visitedOrder.end());
     
@@ -931,8 +931,8 @@ int main() {
              RectangleShape v(Vector2f(CELL_SIZE, CELL_SIZE));
              v.setPosition({(float)n->col*CELL_SIZE, (float)n->row*CELL_SIZE});
              int dist = (int)n->g;
-             int r_val = std::max(0, std::min(255, 0 + dist * 2)); 
-             int g_val = std::max(0, std::min(255, 200 - dist * 2));
+             int r_val = max(0, min(255, 0 + dist * 2)); 
+             int g_val = max(0, min(255, 200 - dist * 2));
              v.setFillColor(Color(r_val, g_val, 255));
              v.setOutlineThickness(-1.f);
              v.setOutlineColor(Color(255, 255, 255, 60)); 
