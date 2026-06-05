@@ -6,6 +6,9 @@
 
 Erebus is a high-performance, real-time pathfinding visualizer built with C++ and SFML. Unlike static pathfinding tools, Erebus features a **Self-Optimizing Knowledge Base** and **Optimal Dynamic Relaxation**, allowing it to learn from successful paths and adapt to environmental changes with mathematical precision.
 
+<!-- Demo Video -->
+<video src="assests/demo.mp4" width="100%" controls></video>
+
 
 
 ---
