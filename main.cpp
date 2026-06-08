@@ -1,6 +1,6 @@
 /*
  * Project: Erebus: The Self-Optimizing Pathfinding Engine
- * Authors: Saif ur Rehman, Huzaifa Imran, Ayesha Tasneem
+ * Authors: Saif ur Rehman, Huzaifa Imran,Sameer Ahmed, Ayesha Tasneem
  * Date: December 31, 2025
  * 
  * Description: 
