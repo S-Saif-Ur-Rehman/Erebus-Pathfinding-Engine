@@ -90,5 +90,5 @@ Contributions are what make the open-source community such an amazing place to l
 ## 📄 License
 Distributed under the MIT License. See `LICENSE` for more information.
 
-**Authors**: Saif ur Rehman, Huzaifa Imran, Ayesha Tasneem  
+**Authors**: Saif ur Rehman, Huzaifa Imran, Ayesha Tasneem, Sameer Ahmed 
 **Project Date**: January 2026
